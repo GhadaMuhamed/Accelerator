@@ -1,0 +1,18 @@
+LIBRARY IEEE;
+USE IEEE.std_logic_1164.all;
+
+ENTITY mux_2 IS  
+Generic (n : integer :=5);
+PORT (
+IN1,IN2:IN STD_LOGIC_VECTOR(n-1 DOWNTO 0);
+SEl:IN STD_LOGIC;
+OUT1:OUT  STD_LOGIC_VECTOR(n-1 DOWNTO 0)
+);    
+END ENTITY mux_2;
+
+
+ARCHITECTURE ArchMux2 OF mux_2 IS
+BEGIN
+OUT1 <= IN1 WHEN SEl='0'
+ELSE IN2 ;
+END ArchMux2;
